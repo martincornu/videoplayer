@@ -3,7 +3,7 @@ from time import sleep
 from subprocess import call
 GPIO.setwarnings(False) 
 GPIO.setmode(GPIO.BCM) 
-GPIO.setup(26, GPIO.IN) 
+GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
 
 pinActive = 0
 
