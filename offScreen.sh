@@ -1,3 +1,4 @@
 #!/bin/bash
 echo "Turn screen off"
-sudo /opt/vc/bin/tvservice -o
+sudo fbi -T 2 -a -fitwidth --noverbose  blackbg.jpeg
+

@@ -1,5 +1,8 @@
 Automatic display of a video on the HDMI output of a raspberry pi 3 depending on the status of an input.
 
-Two services are launched when raspberry starts up:
-- videoplayer.service: launches a python script that turns off the HDMI output, reads the GPIO 23 state in loop and launches a video when GPIO 23 goes high. Then the script turns off the HDMI output. 
-- desktopScreen.service: Launches a python script that reads the state of the GPIO 26 in a loop and displays the desktop on HDMI when GPIO 26 goes high.
+1 service is launched when raspberry starts up: videoplayer.service.
+It launches a python script that display a black image and wait for rising or falling ITs on GPIO 23.
+An external pull up of 2k is used for GPIO 23.
+
+So to launch the video you need to set LOW the output on the other puzzle.
+

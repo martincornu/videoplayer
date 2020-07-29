@@ -1,21 +1,16 @@
-import RPi.GPIO as GPIO 
+import RPi.GPIO as GPIO
 from time import sleep 
 from subprocess import call
-
 GPIO.setwarnings(False) 
 GPIO.setmode(GPIO.BCM) 
-GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
-
-pinActive = 0
-
+GPIO.setup(23, GPIO.IN) #external pull up 2k
+sleep(10)
 rc = call("./offScreen.sh")
 
-while pinActive != 1:
-	pinActive = GPIO.input(23)
-	sleep(1)
-	
-if pinActive == 1:
+while 1:
+	GPIO.wait_for_edge(23, GPIO.FALLING)
 	rc = call("./videoplayer.sh")
-	while pinActive != 0:
-		pinActive = GPIO.input(23)
-		sleep(1)
+	rc = call("./offScreen.sh")
+	GPIO.wait_for_edge(23, GPIO.RISING)
+
+GPIO.cleanup()
