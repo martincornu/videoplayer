@@ -3,7 +3,7 @@ Description=My service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 -u videoplayer.py
+ExecStart=/usr/bin/python3 -u btn_event.py
 WorkingDirectory=/home/pi/Documents/videoplayer
 StandardOutput=inherit
 StandardError=inherit
