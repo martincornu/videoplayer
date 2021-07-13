@@ -11,7 +11,7 @@ LED_GPIO = 26
 BUTTON_GPIO = 5
 ARDUINO_GPIO = 6
 
-VIDEO_DURATION_S = 55   # duration of the video to play in seconds
+VIDEO_DURATION_S = 45   # duration of the video to play in seconds
 
 def signal_handler(sig, frame):
     GPIO.cleanup() 
