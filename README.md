@@ -8,7 +8,7 @@ It launches a python script that display a black image and wait for falling ITs 
 
 External pull ups of 2k on rpi 3V3 are used for GPIO 6, GPIO 5 and GPIO 26 (LED).
 
-So to launch the video you need to set LOW the output on the other puzzle (here an arduino).
+So to launch the video you need to set LOW the output on the other puzzle (here an arduino, code available in /push-buttons-debounce/push-buttons-debounce.ino).
 
 You can also use GPIO 5 the same way (here a button).
 
