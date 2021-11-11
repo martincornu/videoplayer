@@ -12,7 +12,7 @@
 
 
 /***************************** VARIABLES ***************************************/
-const uint8_t magnetPin = 12;                                        // Pin a laquelle est branche laimant
+const uint8_t winPin = 12;                                        // Pin a laquelle est branche laimant
 const uint8_t numberOfButtons = 4;                                   // Nombre de boutons
 const uint8_t arr_buttonPin[numberOfButtons] = { 2, 3, 4, 5 };    // Numero des pins auxquelles sont branches les boutons
 
@@ -74,22 +74,23 @@ void checkButton(uint8_t buttonPin, uint8_t * buttonState, uint8_t * lastButtonS
         #endif
         
         if (suiteIndex == numberOfPress) {
+          suiteIndex = 0;
+          
           #ifdef DEBUG
             Serial.println("Win !!");
           #endif
 
-          pinMode(magnetPin, OUTPUT);
-          digitalWrite(magnetPin, LOW);
           digitalWrite(ledRedPin, LOW);
           digitalWrite(ledGreenPin, HIGH);
+          
+          digitalWrite(winPin, HIGH);
           delay(500);
-          suiteIndex = 0;
-          pinMode(magnetPin, INPUT);        /* floating input. pull-up raspberry pi side */
+          digitalWrite(winPin, LOW);
           
           delay(VIDEO_DURATION_MS - 15000); /* wait a bit less than video duration */
           digitalWrite(ledGreenPin, LOW);
         } else {
-          pinMode(magnetPin, INPUT);        /* floating input. pull-up raspberry pi side */
+          digitalWrite(winPin, LOW);
           digitalWrite(ledGreenPin, LOW);
           digitalWrite(ledRedPin, HIGH);
         }
@@ -116,7 +117,8 @@ void setup() {
   }
   
   // initialize the LED as an output:
-  pinMode(magnetPin, INPUT);      //floating input. pull-up raspberry pi side
+  pinMode(winPin, OUTPUT);
+  digitalWrite(winPin, LOW);
   pinMode(ledGreenPin, OUTPUT);
   digitalWrite(ledGreenPin, LOW);
   pinMode(ledRedPin, OUTPUT);
