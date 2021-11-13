@@ -13,3 +13,7 @@ So to launch the video you need to set LOW the output on the other puzzle (here 
 You can also use GPIO 5 the same way (here a button).
 
 A LED on GPIO 26 is set to HIGH while video is playing.
+
+fbi need to be install for image display sing the following command :
+
+sudo apt-get -y install fbi
