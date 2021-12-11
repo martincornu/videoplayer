@@ -3,12 +3,13 @@ Description=My service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 -u btn_event.py
-WorkingDirectory=/home/pi/Documents/videoplayer
+ExecStart=/usr/bin/python3 -u vdoPlayer.py
+WorkingDirectory=/home/pi/videoplayer/vdoPlayer/py
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
 User=pi
+Environment=DISPLAY=":0.0"
 
 [Install]
 WantedBy=multi-user.target

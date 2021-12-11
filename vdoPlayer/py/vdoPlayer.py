@@ -136,6 +136,8 @@ if __name__ == "__main__":
     
     # ----- initialize with black screen & green led on, red led off
     send_VLC('File>' + black)
+    sleep(1)   # let time for vlc launch
+    send_VLC('Pause')
     ios.set_LED('Green', 0)
     ios.set_LED('Red', 1)
     vdo_on = False
@@ -168,6 +170,8 @@ if __name__ == "__main__":
 
             elif 'endPlay' in cmd:
                 send_VLC('File>' + black)
+                sleep(1)   # let time for vlc launch
+                send_VLC('Pause')
                 if vdo_on:
                     ios.set_LED('Green', 0)
                     ios.set_LED('Red', 1)
