@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Name=Video Player
+Exec=/home/pi/dev/vdoPlayer/bin/vdoPlayer.bin
+Path=/home/pi/dev/vdoPlayer/bin
+GenericName=Video Player
+Icon=/home/pi/dev/vdoPlayer/vdoPlayer.ico
+Terminal=true
+StartupNotify=false
+Categories=Application;
+KeepTerminal=true
+NoDisplay=true
+MimeType= application/x-sharedlib
+
+
+
