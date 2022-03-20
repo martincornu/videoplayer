@@ -15,6 +15,10 @@ The combination to be achieved by pressing the buttons is currently btn1, btn2, 
 ## Configuration
 
 - Raspberry pi OS bullseye installed on [16GB usb key 3.1](https://www.amazon.fr/gp/product/B077Y149DL/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1).
+- Install python vlc: `pip install python-vlc`
+- Install python control: `pip install control`
+- Install python NumPy: `pip install -U numpy`
+- If you get an issue with NumPy, try updating the shared lib: `sudo apt-get install libatlas-base-dev`
 - Enable the service `vdoplayer.service` to launch the script at Rpi boot.
 
 - Remove the Rpi screen saver:
